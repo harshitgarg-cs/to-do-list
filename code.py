@@ -14,11 +14,17 @@ class toDoList:
             print("Current Tasks")
             for task_id, task_info in self.tasks.items():
                 print(f"ID: {task_id}, Task: {task_info['task']}, Priority: {task_info['priority']}, Status: {task_info['status']}")
-'''
-   def remove_task(self, task_id):
-        
+
+    def completed_tasks(self, task_id):
+        if task_id in self.tasks:
+            self.tasks[task_id]['status'] = 'Completed'
+            print(f"Task {task_id} marked as completed.")
+
+    def remove_task(self, task_id):
+        pass
+    
     def delete_task(self, task_id):   
-        
+        pass
 
 while True:
     print("Welcome to the To-Do List App!")
@@ -30,6 +36,6 @@ while True:
     print("6. Exit")
 
     menu_choice = input("Please choose an option (1-6): ")
-'''
+
 todo = toDoList()
 todo.view_tasks()
