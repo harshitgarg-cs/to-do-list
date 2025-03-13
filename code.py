@@ -53,7 +53,6 @@ while True:
     print("6. Exit")
     
     todo = toDoList()
-    todo.view_tasks()
     
     menu_choice = input("Please choose an option (1-6): ")
 
