@@ -5,7 +5,7 @@ class toDoList:
     def add_task(self, task, priority="None", status="Not Started"):
         task_id = len(self.tasks) + 1 #Assigning a unique ID to each task
         self.tasks[task_id] = {"task": task, "priority": priority, "status": status}
-        print(f"Task {task} added successfully with ID {task_id}.")
+        print(f"Task {'task'} added successfully with ID {'task_id'}.")
     
     def view_tasks(self):
         if not self.tasks:
@@ -18,13 +18,13 @@ class toDoList:
     def completed_tasks(self, task_id):
         if task_id in self.tasks:
             self.tasks[task_id]['status'] = 'Completed'
-            print(f"Task {task_id} marked as completed.")
+            print(f"Task {'task_id'} marked as completed.")
 
     def remove_task(self, task_id):
         for task in self. tasks:
             if task_id in self.tasks:
                 deleted_task = self.tasks.pop(task_id)
-                print(f"Task {deleted_task} deleted successfully!")
+                print(f"Task {'deleted_task'} deleted successfully!")
             else:
                 print("Task ID not found")
     
