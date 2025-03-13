@@ -21,7 +21,12 @@ class toDoList:
             print(f"Task {task_id} marked as completed.")
 
     def remove_task(self, task_id):
-        pass
+        for task in self. tasks:
+            if task_id in self.tasks:
+                deleted_task = self.tasks.pop(task_id)
+                print(f"Task {deleted_task} deleted successfully!")
+            else:
+                print("Task ID not found")
     
     def delete_task(self, task_id):   
         pass
