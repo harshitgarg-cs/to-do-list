@@ -28,8 +28,9 @@ class toDoList:
             else:
                 print("Task ID not found")
     
-    def delete_task(self, task_id):   
-        pass
+    def update(self, task_id):   
+        view_tasks(task_id)
+        
 
 while True:
     print("Welcome to the To-Do List App!")
@@ -39,8 +40,35 @@ while True:
     print("4. Delete a task")
     print("5. Update a task")
     print("6. Exit")
-
+    
+    todo = toDoList()
+    todo.view_tasks()
+    
     menu_choice = input("Please choose an option (1-6): ")
 
-todo = toDoList()
-todo.view_tasks()
+    if menu_choice == "1":
+        task = input("Enter the task description: ")
+        priority = input("Enter the priority (High, Medium, Low): ")
+        todo.add_task(task, priority)
+    
+    elif menu_choice == "2":
+        todo.view_tasks()
+    
+    elif menu_choice == "3":
+        task_id = int(input("Enter the task ID: "))
+        todo.completed_tasks(task_id)
+    
+    elif menu_choice == "4":
+        task_id = int(input("Enter the task ID: "))
+        todo.remove_task(task_id)
+    
+    elif menu_choice == "5":
+        task_id = int(input("Enter the task ID: "))
+        todo.update(task_id)
+    
+    elif menu_choice == "6":
+        print("Exiting the To-Do List App. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
