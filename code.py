@@ -29,9 +29,17 @@ class toDoList:
                 print("Task ID not found")
     
     def update(self, task_id):   
-        view_tasks(task_id)
-        
+        if task_id in self.tasks:
+            view_tasks(task_id)
+            new_description = input("Update description: ")
+            new_priority = input("Update priority (High, Medium, Low): ")
+            new_status = input("Update status (Not Started, In Progress, Completed): ")
+            self.tasks[task_id] = {"task": new_description, "priority": new_priority, "status": new_status}
+            print(f"Task {task_id} updated successfully.")
 
+        else:
+            print("Task ID not found.")
+            
 while True:
     print("Welcome to the To-Do List App!")
     print("1. Add a new task")
