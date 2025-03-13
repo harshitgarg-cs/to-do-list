@@ -39,9 +39,12 @@ class toDoList:
 
         else:
             print("Task ID not found.")
-            
+
 while True:
+    
+    print("\n==============================")
     print("Welcome to the To-Do List App!")
+    print("==============================")
     print("1. Add a new task")
     print("2. View all tasks")
     print("3. Mark a task as completed")
@@ -79,4 +82,4 @@ while True:
         break
 
     else:
-        print("Invalid choice. Please try again.")
+        print("\nInvalid choice. Please try again.")
