@@ -3,6 +3,14 @@ class toDoList:
         self.tasks = {}
 
     def add_task(self, task, priority="None", status="Not Started"):
+        if priority not in ["High", "Medium", "Low"]:
+            print("Invalid priority. Please enter High, Medium, or Low.")
+            return
+        
+        if status not in ["Not Started", "In Progress", "Completed"]:
+            print("Invalid status. Please enter Not Started, In Progress, or Completed.")
+            return
+        
         task_id = len(self.tasks) + 1 #Assigning a unique ID to each task
         self.tasks[task_id] = {"task": task, "priority": priority, "status": status}
         print(f"Task {'task'} added successfully with ID {task_id}.")
@@ -10,6 +18,7 @@ class toDoList:
     def view_tasks(self):
         if not self.tasks:
             print("No tasks available.")
+            return
         else:
             print("Current Tasks")
             for task_id, task_info in self.tasks.items():
