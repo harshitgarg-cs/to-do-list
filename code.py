@@ -20,7 +20,7 @@ class toDoList:
     def remove_task(self, task_id):
         if task_id in self.tasks:
                 deleted_task = self.tasks.pop(task_id)
-                print(f"Task {deleted_task[task]} deleted successfully!")
+                print(f"Task {deleted_task['task']} deleted successfully!")
         else:
             print("Task ID not found")
 
