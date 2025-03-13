@@ -3,12 +3,22 @@ class toDoList:
         self.tasks = {}
 
     def add_task(self, task, priority="None", status="Not Started"):
-
+        task_id = len(self.tasks) + 1 #Assigning a unique ID to each task
+        self.tasks[task_id] = {"task": task, "priority": priority, "status": status}
+        print(f"Task {task} added successfully with ID {task_id}.")
+    
     def view_tasks(self):
-
-    def remove_task(self, task_id):
-
+        if not self.tasks:
+            print("No tasks available.")
+        else:
+            print("Current Tasks")
+            for task_id, task_info in self.tasks.items():
+                print(f"ID: {task_id}, Task: {task_info['task']}, Priority: {task_info['priority']}, Status: {task_info['status']}")
+'''
+   def remove_task(self, task_id):
+        
     def delete_task(self, task_id):   
+        
 
 while True:
     print("Welcome to the To-Do List App!")
@@ -20,3 +30,6 @@ while True:
     print("6. Exit")
 
     menu_choice = input("Please choose an option (1-6): ")
+'''
+todo = toDoList()
+todo.view_tasks()
