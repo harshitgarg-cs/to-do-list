@@ -8,9 +8,12 @@ class toDoList:
         print(f"Task {'task'} added successfully with ID {task_id}.")
     
     def view_tasks(self):
-        print("Current Tasks")
-        for task_id, task_info in self.tasks.items():
-            print(f"ID: {task_id}, Task: {task_info['task']}, Priority: {task_info['priority']}, Status: {task_info['status']}")
+        if not self.tasks:
+            print("No tasks available.")
+        else:
+            print("Current Tasks")
+            for task_id, task_info in self.tasks.items():
+                print(f"ID: {task_id}, Task: {task_info['task']}, Priority: {task_info['priority']}, Status: {task_info['status']}")
 
     def completed_tasks(self, task_id):
         if task_id in self.tasks:
